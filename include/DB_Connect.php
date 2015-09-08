@@ -6,7 +6,7 @@
  * Time: 10:41 PM
  */
 
-define ("PATH", "include/config.php");
+define ("PATH", "/include/config.php");
 
 
 class DB_Connect{
@@ -32,9 +32,6 @@ class DB_Connect{
         if ($con->connect_error) {
             die("Connection failed: " . $con->connect_error);
         }
-
-        echo "Connected Successfully";
-
         // returns database handler
         return $con;
     }

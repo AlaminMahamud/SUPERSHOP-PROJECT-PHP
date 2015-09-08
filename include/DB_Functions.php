@@ -23,9 +23,13 @@ class DB_Functions {
     function __destruct(){
     }
 
-    function login_user()
+    function login_user($uname, $password)
     {
+        // check the user exists
+        $sql = "SELECT  '{$uname}' FROM 'users'  where  ;
 
+        // if true then log in
+        // else redirect him to the login page
     }
 
     function registration_user()
@@ -71,10 +75,27 @@ class DB_Functions {
     function populate_the_product()
     {
         $product_row_count = $this->get_all_products();
-        while ($product=mysqli_fetch_array($product_row_count,MYSQL_ASSOC))
-            echo $product["name"]."<br/>";
-
-
+        while ($product=mysqli_fetch_array($product_row_count,MYSQL_ASSOC)) {
+            echo '<div class="product">
+					<div class="image">
+						<a href="">
+							<img alt="POTATO SEASONAL (NEW) BULK" title="POTATO SEASONAL (NEW) BULK" src="image\Product\POTATO SEASONAL (NEW) BULK.jpg">
+						</a>
+					</div>
+					<div class="description">
+						<h4>
+							<a href="">' . $product["name"] . '</a>
+						</h4>
+						<p class="size">Our Price/1.00 Kilogram</p>
+					</div>
+					<div class="price"> ' . $product["sell_price"] . ' </div>
+					<div class="action-control">
+						<a href="">
+							<img alt="add2cart" title="add2cart" src="image\Product\add2cart.PNG">
+						</a>
+					</div>
+				</div>';
+        }
 
     }
 

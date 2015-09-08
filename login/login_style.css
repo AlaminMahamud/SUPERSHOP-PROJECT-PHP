@@ -1,0 +1,51 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{font-size:14px;line-height:22px;color:#666}
+h1, h2, h3, h4, h5, h6{font-weight:normal}
+a{text-decoration:none}
+input[type=text],input[type=password],input[type=email], textarea{border:1px solid #CFCECD;padding: 5px;width:235px}
+
+.main{width:1080px;margin:15px auto; display:block}
+.header{height:110px}
+.logo{float:left; margin:15px}
+.site_title{float:left}
+.site_title h1{font-size:60px;line-height:56px;margin-top:16px}
+.site_title h2{font-size:15px;line-height:40px}
+.maincontent{}
+.menu{background:#323C46;margin-top:15px}
+.menu ul{margin:0;padding:0;list-style:none}
+.menu ul li{float:left;background:url(image/arrao.PNG) no-repeat scroll right center}
+.menu ul li a{color: #fff;display: block;margin-left: 7px;padding: 10 12px;}
+.menu ul li a:hover{}
+.login{padding: 15px}
+.container{border: 1px solid #ddd;
+margin: 20px;
+padding: 14px;
+background:#F9F9F9}
+.customer_reg{}
+.loginContent{float: left;
+margin-left: 94px;}
+.heading{}
+.heading h2{color: #000;
+font-size: 27px;
+line-height: 1;}
+.heading b{}
+.form-group{padding:10px}
+.form-group p{}
+.form-group p br{}
+.heading-wrap{padding:10px}
+.heading-wrap p{}
+.container_info{margin-left: 595px;}
+.container_info h1{color: #000;
+font-size: 27px;
+line-height: 1;}
+.container_info p{padding:10px}
+.container_button{padding:10px}
+
+
+.fix{overflow:hidden}
+.footer{background: none repeat scroll 0 0 #323c45;
+color: slategrey;
+font-size: 16px;
+padding: 10px;
+text-align: center;}
