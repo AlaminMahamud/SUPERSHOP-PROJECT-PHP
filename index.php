@@ -12,7 +12,7 @@ session_start();
 	<link href="css/default/default.css" rel="stylesheet" type="text/css"/>
 	<link href="css/light/light.css" rel="stylesheet" type="text/css"/>
 	<link href="css/nivo-slider.css" rel="stylesheet" type="text/css"/>
-	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
 	
 	</head>
 	<body>
