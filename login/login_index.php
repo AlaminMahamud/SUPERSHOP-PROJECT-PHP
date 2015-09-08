@@ -52,7 +52,7 @@
                             </p>
                         </div>
                         <div class ="fix container_button">
-                            <a href="reg/reg_index.html"><input type="submit" value="SING UP NOW!"/></a>
+                            <a href="reg/reg_index.php"><input type="submit" value="SING UP NOW!"/></a>
                         </div>
                     </div>
 

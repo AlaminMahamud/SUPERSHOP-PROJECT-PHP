@@ -1,6 +1,7 @@
 <?php
 require_once 'include/DB_Functions.php';
 $db = new DB_Functions();
+session_start();
 ?>
 
 <html>
@@ -26,10 +27,18 @@ $db = new DB_Functions();
 						<h2>The power to BUY, the power to SAVE</h2> 
 					</div> 
 					<div class="header_right">
-						<a href="login/login_index.php">Log in</a>
-						<a href="login\reg\reg_index.php">Register</a>
-						<a href="">Cart</a>
-					</div> 
+                        <?php
+                            if(isset($_SESSION['user_name']))
+                                echo 'Logged in as <b>'. $_SESSION['user_name'].'</b> | <a href="logout.php"> Log out</a> |
+                        <a href="">Cart</a>';
+                            else
+                            {
+                                session_destroy();
+                                echo '<a href="login/login_index.php">Log in</a>'.
+                                ' | <a href="login\reg\reg_index.php">Register</a>';
+                            }
+                        ?>
+					</div>
 				
 				<div class="fix singin">
 				

@@ -8,5 +8,20 @@ if(isset($_POST['submit']))
     $pass = $_POST['password'];
 }
 
-$db-> login_user($uname, $pass);
+$bool = $db-> login_user($uname, $pass);
+
+if($bool)
+{
+    echo "login successful";
+    session_start();
+    $_SESSION['user_name'] = $uname;
+    header('Location: index.php');
+}
+else
+{
+    echo "login failed";
+    header('Location: login/login_index.php');
+
+}
+
 ?>

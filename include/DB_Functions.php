@@ -25,16 +25,39 @@ class DB_Functions {
 
     function login_user($uname, $password)
     {
-        // check the user exists
-        $sql = "SELECT  '{$uname}' FROM 'users'  where  ;
+        if(($this->check_user($uname)))
+        {
+            $sql = "SELECT * FROM user WHERE (user_name, user_password) IN (('{$uname}','{$password}')) ";
+            if ($result=mysqli_query($this->con,$sql))
+            {
+                $rowcount=mysqli_num_rows($result);
 
-        // if true then log in
+                if($rowcount > 0){
+                    return true;
+                }else{
+                    // user not Exist
+                    return false;
+                }
+            }else {
+                echo "everything went wrong!";
+            }
+        }
         // else redirect him to the login page
     }
 
-    function registration_user()
+    function registration_user($full_name, $user_name, $password, $email, $date, $address, $phone)
     {
-
+        if(!($this->check_user($user_name)))
+        {
+            $sql = "INSERT INTO user (address, birthday, email, mobile, name, user_name, user_password,purchase_amount)
+                    VALUES ('{$address}','{$date}','{$email}','{$phone}','{$full_name}','{$user_name}','{$password}',0)";
+            if ($result=mysqli_query($this->con,$sql))
+            {
+                return true;
+            }else {
+                echo "everything went wrong!";
+            }
+        }
     }
 
     function buy_product()
@@ -107,5 +130,23 @@ class DB_Functions {
     function email_supplier()
     {
 
+    }
+
+    private function check_user($uname)
+    {
+        $sql = "SELECT 'user_name' FROM `user` WHERE user_name = '{$uname}' ";
+        if ($result=mysqli_query($this->con,$sql))
+        {
+            $rowcount=mysqli_num_rows($result);
+
+            if($rowcount > 0){
+                return true;
+            }else{
+                // user not Exist
+                return false;
+            }
+        }else {
+            echo "everything went wrong!";
+        }
     }
 } 
